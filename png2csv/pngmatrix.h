@@ -21,8 +21,7 @@
 class pngmatrix {
     int x, y;
     
-    png_byte color_type;
-    png_byte bit_depth;
+    
     
     png_structp png_ptr;
     png_infop info_ptr;
@@ -30,6 +29,9 @@ class pngmatrix {
     png_bytep * row_pointers;
     
 public:
+    png_byte bit_depth;
+    png_byte color_type;
+
     int width, height;
     
     void read_png_file(char* file_name);

@@ -23,36 +23,49 @@ int patto::width(){
 }
 
 unsigned long long int patto::pattern_for_point_and_size(int _x, int _y, int _width, int _height){
-    unsigned long long int mask = 0;
-    int comparator = png -> red_pixel(_x, _y), value = 0;
     
-    for (int y = _y; y < _y + _height; y++) {
-        for (int x = _x; x < _x + _width; x++) {
-            value = png -> red_pixel(x, y);
+    unsigned long long int mask = 0;
+    int comparator = png -> red_pixel(_y, _x);
+    int value = 0;
+    
+    //printf("%i x %i [%i]\n", _width, _height, comparator);
+
+    for (int x = _x; x < _x + _height; x++) {
+        for (int y = _y; y < _y + _width; y++) {
+            value = png -> red_pixel(y, x);
             mask += comparator != value;
             mask = mask << 1;
             comparator = value;
         }
     }
-    return mask;
-}
-
-unsigned long long int patto::full_pattern(){
-    return pattern_for_point_and_size(0, 0, png -> width, png -> height);
-    
 
     /*
-    printf("\n");
-    printf("pattern: %c %i %lli\n\n", character, png -> width, mask);
-    
-    for (int y = 0; y < png -> height; y++) {
-        for (int x = 0; x < png -> width; x++) {
-            if (png -> red_pixel(x, y) == value) printf("#");
+    for (int x = _x; x < _x + _height; x++) {
+        for (int y = _y ; y < _y + _width; y++) {
+            if (png -> red_pixel(y, x) == value) printf("#");
             else printf(" ");
         }
         printf("\n");
     }
-    printf("\n");
-    */
-    
+
+     */
+    return mask;
 }
+
+unsigned long long int patto::full_pattern(){
+    return pattern_for_point_and_size(0, 0, png -> width, png -> height);    
+}
+
+/*
+ printf("\n");
+ printf("pattern: %c %i %lli\n\n", character, png -> width, mask);
+ 
+ for (int y = 0; y < png -> height; y++) {
+ for (int x = 0; x < png -> width; x++) {
+ if (png -> red_pixel(x, y) == value) printf("#");
+ else printf(" ");
+ }
+ printf("\n");
+ }
+ printf("\n");
+ */

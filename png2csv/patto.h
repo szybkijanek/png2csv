@@ -13,9 +13,9 @@
 #include "pngmatrix.h"
 
 class patto {
-    pngmatrix *png;
     char *filename;
-    
+    pngmatrix *png;
+
 public:
     void load_file(char *);
 
