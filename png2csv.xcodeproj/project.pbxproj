@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAA4C37B16AAF60400C6184F /* PROJ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA4C37916AAF60400C6184F /* PROJ.framework */; };
+		FAA4C37C16AAF60400C6184F /* UnixImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA4C37A16AAF60400C6184F /* UnixImageIO.framework */; };
+		FAA4C38016AAF71900C6184F /* pngmatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */; };
 		FAC6AD8F16AAEEAE00A5E82E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC6AD8E16AAEEAE00A5E82E /* main.cpp */; };
 		FAC6AD9116AAEEAE00A5E82E /* png2csv.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */; };
 /* End PBXBuildFile section */
@@ -25,6 +28,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FAA4C37916AAF60400C6184F /* PROJ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PROJ.framework; sourceTree = "<group>"; };
+		FAA4C37A16AAF60400C6184F /* UnixImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnixImageIO.framework; sourceTree = "<group>"; };
+		FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pngmatrix.cpp; sourceTree = "<group>"; };
+		FAA4C37F16AAF71900C6184F /* pngmatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngmatrix.h; sourceTree = "<group>"; };
 		FAC6AD8A16AAEEAE00A5E82E /* png2csv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = png2csv; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC6AD8E16AAEEAE00A5E82E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = png2csv.1; sourceTree = "<group>"; };
@@ -35,17 +42,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAA4C37B16AAF60400C6184F /* PROJ.framework in Frameworks */,
+				FAA4C37C16AAF60400C6184F /* UnixImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAA4C37D16AAF62A00C6184F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4C37916AAF60400C6184F /* PROJ.framework */,
+				FAA4C37A16AAF60400C6184F /* UnixImageIO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAC6AD7F16AAEEAE00A5E82E = {
 			isa = PBXGroup;
 			children = (
 				FAC6AD8D16AAEEAE00A5E82E /* png2csv */,
 				FAC6AD8B16AAEEAE00A5E82E /* Products */,
+				FAA4C37D16AAF62A00C6184F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +81,8 @@
 			children = (
 				FAC6AD8E16AAEEAE00A5E82E /* main.cpp */,
 				FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */,
+				FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */,
+				FAA4C37F16AAF71900C6184F /* pngmatrix.h */,
 			);
 			path = png2csv;
 			sourceTree = "<group>";
@@ -118,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC6AD8F16AAEEAE00A5E82E /* main.cpp in Sources */,
+				FAA4C38016AAF71900C6184F /* pngmatrix.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +200,12 @@
 		FAC6AD9516AAEEAE00A5E82E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_VERSION = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -185,6 +213,12 @@
 		FAC6AD9616AAEEAE00A5E82E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_VERSION = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -208,6 +242,7 @@
 				FAC6AD9616AAEEAE00A5E82E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
