@@ -7,3 +7,7 @@
 //
 
 #include "pngmatrix.h"
+
+void pngmatrix::hello(){
+    
+}

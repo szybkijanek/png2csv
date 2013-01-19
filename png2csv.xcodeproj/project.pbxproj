@@ -81,8 +81,8 @@
 			children = (
 				FAC6AD8E16AAEEAE00A5E82E /* main.cpp */,
 				FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */,
-				FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */,
 				FAA4C37F16AAF71900C6184F /* pngmatrix.h */,
+				FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */,
 			);
 			path = png2csv;
 			sourceTree = "<group>";

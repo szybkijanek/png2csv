@@ -9,6 +9,11 @@
 #ifndef __png2csv__pngmatrix__
 #define __png2csv__pngmatrix__
 
-#include <iostream>
+class pngmatrix {
+    int width, height;
+    
+public:
+    void hello();
+};
 
 #endif /* defined(__png2csv__pngmatrix__) */
