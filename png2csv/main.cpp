@@ -7,7 +7,8 @@
 //
 
 #include <iostream>
-#include <UnixImageIO/png.h>
+
+// Klasy własne
 #include "pngmatrix.h"
 
 using namespace std;
@@ -15,7 +16,7 @@ using namespace std;
 int main(int argc, const char * argv[])
 {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    cout << "Hello, World!\n";
     return 0;
 }
 

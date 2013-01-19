@@ -9,10 +9,27 @@
 #ifndef __png2csv__pngmatrix__
 #define __png2csv__pngmatrix__
 
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdarg.h>
+
+#define PNG_DEBUG 3
+#include <UnixImageIO/png.h>
+
 class pngmatrix {
     int width, height;
+    png_byte color_type;
+    png_byte bit_depth;
+    
+    png_structp png_ptr;
+    png_infop info_ptr;
+    int number_of_passes;
+    png_bytep * row_pointers;
     
 public:
+    void abort_(const char * s, ...);
     void hello();
 };
 
