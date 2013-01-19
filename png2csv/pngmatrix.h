@@ -21,7 +21,6 @@
 class pngmatrix {
     int x, y;
     
-    int width, height;
     png_byte color_type;
     png_byte bit_depth;
     
@@ -31,8 +30,11 @@ class pngmatrix {
     png_bytep * row_pointers;
     
 public:
+    int width, height;
+    
     void read_png_file(char* file_name);
     void process_file(void);
+    int red_pixel(int _x, int _y);
 };
 
 #endif /* defined(__png2csv__pngmatrix__) */

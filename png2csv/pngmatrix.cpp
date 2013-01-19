@@ -48,6 +48,14 @@ void pngmatrix::read_png_file(char* file_name){
     
     fclose(fp);
 }
+
+
+int pngmatrix::red_pixel(int _x, int _y){
+    png_byte* row = row_pointers[_y];
+    png_byte* ptr = &(row[_x*4]);
+    return ptr[0];
+}
+
 void pngmatrix::process_file(void){
     for (y=0; y<height; y++) {
         png_byte* row = row_pointers[y];
