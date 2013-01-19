@@ -19,6 +19,8 @@
 #include <UnixImageIO/png.h>
 
 class pngmatrix {
+    int x, y;
+    
     int width, height;
     png_byte color_type;
     png_byte bit_depth;
@@ -29,8 +31,8 @@ class pngmatrix {
     png_bytep * row_pointers;
     
 public:
-    void abort_(const char * s, ...);
-    void hello();
+    void read_png_file(char* file_name);
+    void process_file(void);
 };
 
 #endif /* defined(__png2csv__pngmatrix__) */

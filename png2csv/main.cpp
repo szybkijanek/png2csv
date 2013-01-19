@@ -7,16 +7,18 @@
 //
 
 #include <iostream>
-
-// Klasy własne
 #include "pngmatrix.h"
 
 using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    // insert code here...
     cout << "Hello, World!\n";
+    
+    pngmatrix *png = new pngmatrix;
+    png -> read_png_file("0.png");
+    png -> process_file();
+    // insert code here...
     return 0;
 }
 
