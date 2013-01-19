@@ -38,6 +38,7 @@
 		FAA4C38216AB21E700C6184F /* patto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patto.h; sourceTree = "<group>"; };
 		FAA4C38416AB4A8200C6184F /* analizer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = analizer.cpp; sourceTree = "<group>"; };
 		FAA4C38516AB4A8200C6184F /* analizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analizer.h; sourceTree = "<group>"; };
+		FAA4C38716AB4C2C00C6184F /* structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structures.h; sourceTree = "<group>"; };
 		FAC6AD8A16AAEEAE00A5E82E /* png2csv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = png2csv; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC6AD8E16AAEEAE00A5E82E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = png2csv.1; sourceTree = "<group>"; };
@@ -85,9 +86,10 @@
 		FAC6AD8D16AAEEAE00A5E82E /* png2csv */ = {
 			isa = PBXGroup;
 			children = (
+				FAA4C38716AB4C2C00C6184F /* structures.h */,
 				FAC6AD8E16AAEEAE00A5E82E /* main.cpp */,
-				FAA4C38416AB4A8200C6184F /* analizer.cpp */,
 				FAA4C38516AB4A8200C6184F /* analizer.h */,
+				FAA4C38416AB4A8200C6184F /* analizer.cpp */,
 				FAA4C38216AB21E700C6184F /* patto.h */,
 				FAA4C38116AB21E700C6184F /* patto.cpp */,
 				FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */,
