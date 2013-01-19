@@ -12,11 +12,18 @@
 #include <iostream>
 #include "pngmatrix.h"
 
-#define PATTERN_HEIGHT
-
 class patto {
+    pngmatrix *png;
+    char *filename;
+    
 public:
-    unsigned long long int full_pattern_for_file(char *);
+    void load_file(char *);
+
+    char character();
+    int width();
+    unsigned long long int full_pattern();
+
+    unsigned long long int pattern_for_point_and_size(int _x, int _y, int _width, int _height);
 };
 
 #endif /* defined(__png2csv__patto__) */
