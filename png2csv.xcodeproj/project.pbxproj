@@ -10,6 +10,7 @@
 		FAA4C37B16AAF60400C6184F /* PROJ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA4C37916AAF60400C6184F /* PROJ.framework */; };
 		FAA4C37C16AAF60400C6184F /* UnixImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA4C37A16AAF60400C6184F /* UnixImageIO.framework */; };
 		FAA4C38016AAF71900C6184F /* pngmatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */; };
+		FAA4C38316AB21E700C6184F /* patto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAA4C38116AB21E700C6184F /* patto.cpp */; };
 		FAC6AD8F16AAEEAE00A5E82E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FAC6AD8E16AAEEAE00A5E82E /* main.cpp */; };
 		FAC6AD9116AAEEAE00A5E82E /* png2csv.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,8 @@
 		FAA4C37A16AAF60400C6184F /* UnixImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnixImageIO.framework; sourceTree = "<group>"; };
 		FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pngmatrix.cpp; sourceTree = "<group>"; };
 		FAA4C37F16AAF71900C6184F /* pngmatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngmatrix.h; sourceTree = "<group>"; };
+		FAA4C38116AB21E700C6184F /* patto.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = patto.cpp; sourceTree = "<group>"; };
+		FAA4C38216AB21E700C6184F /* patto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patto.h; sourceTree = "<group>"; };
 		FAC6AD8A16AAEEAE00A5E82E /* png2csv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = png2csv; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC6AD8E16AAEEAE00A5E82E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = png2csv.1; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC6AD8E16AAEEAE00A5E82E /* main.cpp */,
+				FAA4C38216AB21E700C6184F /* patto.h */,
+				FAA4C38116AB21E700C6184F /* patto.cpp */,
 				FAC6AD9016AAEEAE00A5E82E /* png2csv.1 */,
 				FAA4C37F16AAF71900C6184F /* pngmatrix.h */,
 				FAA4C37E16AAF71900C6184F /* pngmatrix.cpp */,
@@ -140,6 +145,7 @@
 			files = (
 				FAC6AD8F16AAEEAE00A5E82E /* main.cpp in Sources */,
 				FAA4C38016AAF71900C6184F /* pngmatrix.cpp in Sources */,
+				FAA4C38316AB21E700C6184F /* patto.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

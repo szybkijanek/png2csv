@@ -8,43 +8,15 @@
 
 #include <iostream>
 #include "pngmatrix.h"
+#include "patto.h"
 
 using namespace std;
 
-int main(int argc, const char * argv[])
-{    
-    pngmatrix *png = new pngmatrix;
-    png -> read_png_file("0.png");
-    //printf("%i x %i\n", png -> width, png -> height);
+int main(int argc, const char * argv[]){
+    patto *pattern_generator = new patto;
+    unsigned long long int pattern = pattern_generator -> full_pattern_for_file((char *) "E.png");
     
-    unsigned long long int mask = 0;
-    unsigned long long int mask2 = 18824611360;
-    
-    int comparator = png -> red_pixel(0, 0), value = 0;
-    for (int y = 0; y < png -> height; y++) {
-        for (int x = 0; x < png -> width; x++) {
-            value = png -> red_pixel(x, y);
-            mask += comparator != value;
-            mask = mask << 1;
-            comparator = value;
-        }
-    }
-    
-    printf("\n");
-    printf("mask: %lli\n\n", mask);
-    
-    for (int y = 0; y < png -> height; y++) {
-        for (int x = 0; x < png -> width; x++) {
-            if (png -> red_pixel(x, y) == value) printf("#");
-            else printf(" ");
-        }
-        printf("\n");
-    }
-    printf("\n");
-    
-    printf("Egual? [%i]\n", mask == mask2);
-    
-    // insert code here...
+    printf("pattern: %lli", pattern);
     return 0;
 }
 
