@@ -267,9 +267,7 @@ void analizer::set_scales(){
     wind_r3 = line + 4;
     //printf("%i\t] first line:\t%i\n", wind_v3, wind_r3);
 }
-void analizer::analize_frame(frame _frame){
-    //char* first_string = new char[5];
-    
+void analizer::analize_frame(frame _frame){    
     int line = -1;
     for (int x = _frame.x; x < _frame.x + _frame.height; x++) {
         for (int y = _frame.y; y < _frame.y + _frame.width; y++) {
@@ -283,7 +281,4 @@ void analizer::analize_frame(frame _frame){
             }
         }
     }
-    
-    
-    //return first_string;
 }
