@@ -8,6 +8,8 @@
 
 #include "analizer.h"
 
+#define PATTERNS_COUNT 11
+
 void analizer::load_file(char * _filename){
     filename = _filename;
     pattern_generator -> load_file(_filename);
@@ -172,7 +174,7 @@ void analizer::set_scales(){
     counter = 0;
     buffer = new char[5];
     // first line
-    for (int x = _frame.x; x < _frame.x + _frame.height; x++) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<13; i++)
+    for (int x = _frame.x; x < _frame.x + _frame.height; x++) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<PATTERNS_COUNT; i++)
         if (patterns[i] == pattern_generator -> pattern_for_point_and_size(x, y, widths[i], 8)) {
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
@@ -187,7 +189,7 @@ void analizer::set_scales(){
     counter = 0;
     buffer = new char[5];
     // last line
-    for (int x = _frame.x + _frame.height - 1; x >= _frame.x; x--) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<13; i++)
+    for (int x = _frame.x + _frame.height - 1; x >= _frame.x; x--) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<PATTERNS_COUNT; i++)
         if (patterns[i] == pattern_generator -> pattern_for_point_and_size(x, y, widths[i], 8)) {
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
@@ -205,7 +207,7 @@ void analizer::set_scales(){
     counter = 0;
     buffer = new char[5];
     // first line
-    for (int x = _frame.x; x < _frame.x + _frame.height; x++) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<13; i++)
+    for (int x = _frame.x; x < _frame.x + _frame.height; x++) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<PATTERNS_COUNT; i++)
         if (patterns[i] == pattern_generator -> pattern_for_point_and_size(x, y, widths[i], 8)) {
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
@@ -220,7 +222,7 @@ void analizer::set_scales(){
     counter = 0;
     buffer = new char[5];
     // last line
-    for (int x = _frame.x + _frame.height - 1; x >= _frame.x; x--) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<13; i++)
+    for (int x = _frame.x + _frame.height - 1; x >= _frame.x; x--) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<PATTERNS_COUNT; i++)
         if (patterns[i] == pattern_generator -> pattern_for_point_and_size(x, y, widths[i], 8)) {
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
@@ -239,7 +241,7 @@ void analizer::set_scales(){
     counter = 0;
     buffer = new char[5];
     // first line
-    for (int x = _frame.x; x < _frame.x + _frame.height; x++) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<13; i++)
+    for (int x = _frame.x; x < _frame.x + _frame.height; x++) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<PATTERNS_COUNT; i++)
         if (patterns[i] == pattern_generator -> pattern_for_point_and_size(x, y, widths[i], 8)) {
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
@@ -254,7 +256,7 @@ void analizer::set_scales(){
     counter = 0;
     buffer = new char[5];
     // last line
-    for (int x = _frame.x + _frame.height - 1; x >= _frame.x; x--) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<13; i++)
+    for (int x = _frame.x + _frame.height - 1; x >= _frame.x; x--) for (int y = _frame.y; y < _frame.y + _frame.width; y++) for (int i=0; i<PATTERNS_COUNT; i++)
         if (patterns[i] == pattern_generator -> pattern_for_point_and_size(x, y, widths[i], 8)) {
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
