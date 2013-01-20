@@ -42,6 +42,10 @@ class analizer {
     frame pressure_scale_frame = {221,30,33,86};
     frame wind_scale_frame = {307,30,33,86};
     
+    range temperature_range = {58,76};
+    range pressure_range = {230,76};
+    range wind_range = {316,76};
+    
     // dane skali
     int temperature_v1=0, temperature_v3=0, temperature_r1=0, temperature_r3=0;
     int pressure_v1=0, pressure_v3=0, pressure_r1=0, pressure_r3=0;
