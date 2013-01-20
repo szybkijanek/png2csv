@@ -42,29 +42,36 @@ class analizer {
     frame pressure_scale_frame = {221,30,33,86};
     frame wind_scale_frame = {307,30,33,86};
     
+    // dane skali
     int temperature_v1=0, temperature_v3=0, temperature_r1=0, temperature_r3=0;
     int pressure_v1=0, pressure_v3=0, pressure_r1=0, pressure_r3=0;
     int wind_v1=0, wind_v3=0, wind_r1=0, wind_r3=0;
     
+    // obiekty
     patto *pattern_generator = new patto;
+    
+    // parametry pliku
     char *filename;
-    
     time_t epch;
-    
     int station_id;
+    
+    // metody prywatne
+    float temperature_with_row(int row);
+    float pressure_with_row(int row);
+    float wind_with_row(int row);
+    
+    void set_scales();
+    void set_date();
+    void set_station_id();
+    
+    void analize_frame(frame);
+    
+    int column_for_hour_interval(int);
+    time_t timestamp_for_hour_interval(int);
     
 public:
         
     void load_file(char *);
-    void set_scales();
-    void set_date();
-    void set_station_id();
-
-    void analize_frame(frame);
-    
-    float temperature_with_row(int row);
-    float pressure_with_row(int row);
-    float wind_with_row(int row);
 
 };
 

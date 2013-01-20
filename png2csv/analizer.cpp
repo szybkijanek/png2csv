@@ -34,6 +34,9 @@ void analizer::set_station_id(){
     station_id = (column - 52)/14 * 25 + (row - 10)/14;
 }
 
+int analizer::column_for_hour_interval(int interval){return 51 + 7 * interval;}
+time_t analizer::timestamp_for_hour_interval(int interval){return epch + interval * 60 * 60;}
+
 void analizer::set_date(){
     char buff[3];
     

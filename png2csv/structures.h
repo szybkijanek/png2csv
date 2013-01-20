@@ -9,8 +9,7 @@
 #ifndef png2csv_structures_h
 #define png2csv_structures_h
 
-struct frame {
-    int x,y,width,height;
-};
+struct frame {int x,y,width,height;};
+struct range {int loc, len;};
 
 #endif

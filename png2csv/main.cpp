@@ -22,9 +22,7 @@ int main(int argc, const char * argv[]){
     analizer *meteorogram_analizer = new analizer;
 
     meteorogram_analizer -> load_file((char *)argv[1]);
-    
-    meteorogram_analizer -> analize_frame({51,30,33,86});
-    
+
     return 0;
 }
 
