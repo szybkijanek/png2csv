@@ -37,6 +37,100 @@ void analizer::set_station_id(){
 int analizer::column_for_hour_interval(int interval){return 51 + 7 * interval;}
 time_t analizer::timestamp_for_hour_interval(int interval){return epch + interval * 60 * 60;}
 
+void analizer::println_for_hour_interval(int interval){
+    time_t timestamp = timestamp_for_hour_interval(interval);
+
+    int column = column_for_hour_interval(interval);
+    
+    float temperature = temperature_with_column(column);
+    int pressure = pressure_with_column(column);
+    int wind_max = wind_max_with_column(column);
+    int wind_avg = wind_avg_with_column(column);
+    
+    // station_id / timestamp / temperature / pressure / wind_max / wind_avg
+    printf("%i, %li, %.1f, %i, %i, %i\n", station_id, timestamp, temperature, pressure, wind_max, wind_avg);
+}
+
+float analizer::temperature_with_column(int column){
+    range _range = temperature_range;
+    float temperature_r2 = 0;
+    // dwie kolejne 255
+    
+    int repeater = 0;
+    while (!temperature_r2) {
+        for (int row = _range.loc; row < _range.loc + _range.len ; row++) {
+            //printf("[%i:%i]\t%i\n", row, column, pattern_generator -> png -> red_pixel(column, row));
+            if(pattern_generator -> png ->red_pixel(column+repeater, row) == 255 && pattern_generator -> png ->red_pixel(column+repeater, row+1) == 255){
+                temperature_r2 = row;
+                break;
+            }
+        }
+        repeater++;
+    }
+    return temperature_v1 + (temperature_r2 - temperature_r1) * (temperature_v3 - temperature_v1) / (temperature_r3 - temperature_r1);
+}
+
+int analizer::pressure_with_column(int column){
+    range _range = pressure_range;
+    float pressure_r2 = 0;
+    // dwa kolejne 0
+    
+    int repeater = 0;
+    while (!pressure_r2) {
+        for (int row = _range.loc; row < _range.loc + _range.len ; row++) {
+            //printf("[%i:%i]\t%i\n", row, column, pattern_generator -> png -> red_pixel(column, row));
+            if(pattern_generator -> png ->red_pixel(column+repeater, row) == 0 &&
+               pattern_generator -> png ->red_pixel(column+repeater, row+1) == 0){
+                pressure_r2 = row;
+                break;
+            }
+        }
+        repeater++;
+    }
+    return pressure_v1 + (pressure_r2 - pressure_r1) * (pressure_v3 - pressure_v1) / (pressure_r3 - pressure_r1);
+}
+
+int analizer::wind_max_with_column(int column){
+    range _range = wind_range;
+    float wind_r2 = 0;
+    // pierwsze r255 g0
+    int repeater = 0;
+    while (!wind_r2) {
+        for (int row = _range.loc; row < _range.loc + _range.len ; row++) {
+            //printf("[%i:%i]\t%i - %i\n", row, column, pattern_generator -> png -> red_pixel(column, row), pattern_generator -> png -> green_pixel(column, row));
+            if(pattern_generator -> png ->red_pixel(column+repeater, row) == 255 &&
+               pattern_generator -> png ->green_pixel(column+repeater, row) == 0){
+                wind_r2 = row;
+                break;
+            }
+        }
+        repeater++;
+    }
+    
+    return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1);
+}
+
+int analizer::wind_avg_with_column(int column){
+    range _range = wind_range;
+    float wind_r2 = 0;
+    // pierwsze dwa r17
+    int repeater = 0;
+    while (!wind_r2) {
+        for (int row = _range.loc; row < _range.loc + _range.len ; row++) {
+            //printf("[%i:%i]\t%i - %i\n", row, column, pattern_generator -> png -> red_pixel(column, row), pattern_generator -> png -> green_pixel(column, row));
+            if(pattern_generator -> png ->red_pixel(column+repeater, row) == 17 &&
+               pattern_generator -> png ->red_pixel(column+repeater, row + 1) == 17){
+                wind_r2 = row;
+                break;
+            }
+        }
+        repeater++;
+    }
+    
+    return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1);
+}
+
+
 void analizer::set_date(){
     char buff[3];
     

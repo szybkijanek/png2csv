@@ -56,6 +56,12 @@ int pngmatrix::red_pixel(int _x, int _y){
     return ptr[0];
 }
 
+int pngmatrix::green_pixel(int _x, int _y){
+    png_byte* row = row_pointers[_y];
+    png_byte* ptr = &(row[_x*4]);
+    return ptr[1];
+}
+
 void pngmatrix::process_file(void){
     for (y=0; y<height; y++) {
         png_byte* row = row_pointers[y];

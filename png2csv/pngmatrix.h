@@ -37,6 +37,7 @@ public:
     void read_png_file(char* file_name);
     void process_file(void);
     int red_pixel(int _x, int _y);
+    int green_pixel(int _x, int _y);
 };
 
 #endif /* defined(__png2csv__pngmatrix__) */

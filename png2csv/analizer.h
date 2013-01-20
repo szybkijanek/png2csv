@@ -60,9 +60,10 @@ class analizer {
     int station_id;
     
     // metody prywatne
-    float temperature_with_row(int row);
-    float pressure_with_row(int row);
-    float wind_with_row(int row);
+    float temperature_with_column(int);
+    int pressure_with_column(int);
+    int wind_max_with_column(int);
+    int wind_avg_with_column(int);
     
     void set_scales();
     void set_date();
@@ -76,6 +77,7 @@ class analizer {
 public:
         
     void load_file(char *);
+    void println_for_hour_interval(int);
 
 };
 

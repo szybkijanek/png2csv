@@ -22,7 +22,9 @@ int main(int argc, const char * argv[]){
     analizer *meteorogram_analizer = new analizer;
 
     meteorogram_analizer -> load_file((char *)argv[1]);
-
+    
+    for (int i=2; i<=24; i+=2) meteorogram_analizer -> println_for_hour_interval(i);
+    
     return 0;
 }
 

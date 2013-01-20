@@ -14,9 +14,10 @@
 
 class patto {
     char *filename;
-    pngmatrix *png;
 
 public:
+    pngmatrix *png;
+
     void load_file(char *);
 
     char character();
