@@ -19,22 +19,11 @@ int main(int argc, const char * argv[]){
     patogen -> load_file("-.png");
     printf("[%lli]\n", patogen -> full_pattern());
     */
-    
     analizer *meteorogram_analizer = new analizer;
 
-    meteorogram_analizer -> load_file((char *) "meteorogram.png");    
+    meteorogram_analizer -> load_file((char *)argv[1]);
     
-    // skala zaczyna się na 63
-    frame temperature_scale_frame = {51,30,33,86};
-    frame pressure_scale_frame = {221,30,33,86};
-    frame wind_scale_frame = {307,30,33,86};
-    
-    printf("Temperature:\n");
-    meteorogram_analizer -> analize_frame(temperature_scale_frame);
-    printf("\n\nPressure:\n");
-    meteorogram_analizer -> analize_frame(pressure_scale_frame);
-    printf("\n\nWind:\n");
-    meteorogram_analizer -> analize_frame(wind_scale_frame);
+    meteorogram_analizer -> analize_frame({51,30,33,86});
     
     return 0;
 }
