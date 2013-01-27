@@ -16,7 +16,7 @@
 #include <stdarg.h>
 
 #define PNG_DEBUG 3
-#include <UnixImageIO/png.h>
+#include <png.h>
 
 class pngmatrix {
     int x, y;
