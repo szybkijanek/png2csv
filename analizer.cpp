@@ -144,7 +144,7 @@ int analizer::pressure_with_column(int column){
 
 int analizer::wind_max_with_column(int column){
     range _range = wind_range;
-    int wind_r2 = 0;
+    float wind_r2 = 0;
     // pierwsze r255 g0
     int repeater = 0;
     while (!wind_r2) {
@@ -158,15 +158,13 @@ int analizer::wind_max_with_column(int column){
         }
         repeater++;
     }
-	
-	printf("v1: %d | v3: %d | r1: %d | r2: %d | r3: %d\n", wind_v1, wind_v3, wind_r1, wind_r2, wind_r3);
-    // Dont ask why -1
-    return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1) - 1;
+
+    return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1);
 }
 
 int analizer::wind_avg_with_column(int column){
     range _range = wind_range;
-    int wind_r2 = 0;
+    float wind_r2 = 0;
     // pierwsze dwa r17
     int repeater = 0;
     while (!wind_r2) {
@@ -181,7 +179,7 @@ int analizer::wind_avg_with_column(int column){
         repeater++;
     }
     
-    return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1) - 1;
+    return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1);
 }
 
 
