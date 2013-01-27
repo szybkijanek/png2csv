@@ -231,6 +231,7 @@ void analizer::set_scales(){
             line = x;
             break;
         }
+	buffer[counter] = '\0';
     temperature_v1 = atoi(buffer);
     temperature_r1 = line + 4;
     //printf("%i\t] first line:\t%i\n", temperature_v1, temperature_r1);
@@ -246,6 +247,7 @@ void analizer::set_scales(){
             line = x;
             break;
         }
+	buffer[counter] = '\0';
     temperature_v3 = atoi(buffer);
     temperature_r3 = line + 4;
     //printf("%i\t] first line:\t%i\n", temperature_v3, temperature_r3);
@@ -264,6 +266,7 @@ void analizer::set_scales(){
             line = x;
             break;
         }
+	buffer[counter] = '\0';
     pressure_v1 = atoi(buffer);
     pressure_r1 = line + 4;
     //printf("%i\t] first line:\t%i\n", pressure_v1, pressure_r1);
@@ -279,6 +282,7 @@ void analizer::set_scales(){
             line = x;
             break;
         }
+	buffer[counter] = '\0';
     pressure_v3 = atoi(buffer);
     pressure_r3 = line + 4;
     //printf("%i\t] first line:\t%i\n", pressure_v3, pressure_r3);
@@ -296,14 +300,12 @@ void analizer::set_scales(){
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
             line = x;
-			printf("\tGOOD [%c]!\n", chars[i]);
             break;
         }
 	
 	buffer[counter] = '\0';
     wind_v1 = atoi(buffer);
     wind_r1 = line + 4;
-	printf("\tFound v1:%d\n", wind_v1);
 	
     //printf("%i\t] first line:\t%i\n", wind_v1, wind_r1);
     
@@ -318,6 +320,7 @@ void analizer::set_scales(){
             line = x;
             break;
         }
+	buffer[counter] = '\0';
     wind_v3 = atoi(buffer);
     wind_r3 = line + 4;
     //printf("%i\t] first line:\t%i\n", wind_v3, wind_r3);
