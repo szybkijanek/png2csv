@@ -159,7 +159,7 @@ int analizer::wind_max_with_column(int column){
         repeater++;
     }
 	
-	//printf("v1: %d | v3: %d | r1: %d | r2: %d | r3: %d\n", wind_v1, wind_v3, wind_r1, wind_r2, wind_r3);
+	printf("v1: %d | v3: %d | r1: %d | r2: %d | r3: %d\n", wind_v1, wind_v3, wind_r1, wind_r2, wind_r3);
     // Dont ask why -1
     return wind_v1 + (wind_r2 - wind_r1) * (wind_v3 - wind_v1) / (wind_r3 - wind_r1) - 1;
 }
