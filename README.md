@@ -1,8 +1,7 @@
 #Instalacja
-Program napisany jest w C++11, więc czysty gcc sobie z nim nie poradzi. Wbudowaną obsługę C++11 ma LLVM.
 Wymagane:
 
-* clang
+* build-essential
 * libpng
 
 Sama instalacja to proste:
