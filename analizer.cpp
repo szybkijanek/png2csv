@@ -10,6 +10,56 @@
 
 #define PATTERNS_COUNT 11
 
+analizer::analizer(){
+	chars = (char *) "1-023456789";
+	
+	widths[0] = 3;
+	widths[1] = 5;
+	widths[2] = 5;
+	widths[3] = 5;
+	widths[4] = 5;
+	widths[5] = 5;
+	widths[6] = 5;
+	widths[7] = 5;
+	widths[8] = 5;
+	widths[9] = 5;
+	widths[10] = 5;
+	
+	patterns[0] = 15429046;
+	patterns[1] = 589824;
+	patterns[2] = 672785844850;
+	patterns[3] = 673340286496;
+	patterns[4] = 673347373682;
+	patterns[5] = 217935742150;
+	patterns[6] = 610709637746;
+	patterns[7] = 672736561778;
+	patterns[8] = 37795291928;
+	patterns[9] = 672820447858;
+	patterns[10] = 672786844274;
+	
+	pattern_generator = new patto;
+	wind_v1 = wind_v3 = wind_r1 = wind_r3 = 0;
+    temperature_v1 = temperature_v3 = temperature_r1 = temperature_r3 = 0;
+    pressure_v1 = pressure_v3 = pressure_r1 = pressure_r3 = 0;
+	
+	temperature_scale_frame.x = 51;
+	pressure_scale_frame.x = 221;
+	wind_scale_frame.x = 307;
+	
+	temperature_scale_frame.y = pressure_scale_frame.y = wind_scale_frame.y = 30;
+	temperature_scale_frame.width = pressure_scale_frame.width = wind_scale_frame.width = 33;
+	temperature_scale_frame.height = pressure_scale_frame.height = wind_scale_frame.height = 86;
+    
+    temperature_range.loc = 58;
+    temperature_range.len = 76;
+	
+    pressure_range.loc = 230;
+    pressure_range.len = 76;
+	
+    wind_range.loc = 316;
+    wind_range.len = 76;
+}
+
 void analizer::load_file(char * _filename){
     filename = _filename;
     pattern_generator -> load_file(_filename);

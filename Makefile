@@ -2,10 +2,10 @@
 # Nie wiem jak to działa, więc załóżmy,
 # że tak to ma wyglądać
 
-CC=clang++
+CC=g++
 OBJS=main.cpp analizer.cpp patto.cpp pngmatrix.cpp
 PNGFLAGS=`libpng-config --cflags --ldflags`
-LFLAGS=-std=gnu++11 -stdlib=libc++ $(PNGFLAGS) -O0
+LFLAGS=-std=c++98 $(PNGFLAGS) -O0
 
 all: png2csv
 

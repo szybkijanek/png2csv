@@ -30,32 +30,28 @@
 
 class analizer {
     // static config
-    char *chars = (char *) "1-023456789";
-    int widths[11] = {3,5,5,5,5,5,5,5,5,5,5,};
-    unsigned long long int patterns[11] = {15429046, 589824, 672785844850, 673340286496, 673347373682, 217935742150, 610709637746, 672736561778, 37795291928, 672820447858, 672786844274};
-    
+    char *chars;
+    int widths[11];
+	
+    unsigned long long int patterns[11];
+	
     // skala zaczyna się od 63
-    frame temperature_scale_frame = {51,30,33,86};
-    frame pressure_scale_frame = {221,30,33,86};
-    frame wind_scale_frame = {307,30,33,86};
-    
-    range temperature_range = {58,76};
-    range pressure_range = {230,76};
-    range wind_range = {316,76};
+    frame temperature_scale_frame, pressure_scale_frame, wind_scale_frame;
+    range temperature_range, pressure_range, wind_range;
     
     // dane skali
-    int temperature_v1=0, temperature_v3=0, temperature_r1=0, temperature_r3=0;
-    int pressure_v1=0, pressure_v3=0, pressure_r1=0, pressure_r3=0;
-    int wind_v1=0, wind_v3=0, wind_r1=0, wind_r3=0;
+    int temperature_v1, temperature_v3, temperature_r1, temperature_r3;
+    int pressure_v1, pressure_v3, pressure_r1, pressure_r3;
+    int wind_v1, wind_v3, wind_r1, wind_r3;
     
     // obiekty
-    patto *pattern_generator = new patto;
+    patto *pattern_generator;
     
     // parametry pliku
     char *filename;
     time_t epch;
     int station_id;
-    
+	
     // metody prywatne
     float temperature_with_column(int);
     int pressure_with_column(int);
@@ -72,7 +68,9 @@ class analizer {
     time_t timestamp_for_hour_interval(int);
     
 public:
-        
+	// konstruktor
+	analizer();
+	  
     void load_file(char *);
     void println_for_hour_interval(int);
 
