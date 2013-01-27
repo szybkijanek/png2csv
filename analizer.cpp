@@ -302,6 +302,8 @@ void analizer::set_scales(){
         }
     wind_v1 = atoi(buffer);
     wind_r1 = line + 4;
+	printf("\tFound v1:%d\n", wind_v1);
+	
     //printf("%i\t] first line:\t%i\n", wind_v1, wind_r1);
     
     line = -1;
