@@ -299,6 +299,8 @@ void analizer::set_scales(){
 			printf("\tGOOD [%c]!\n", chars[i]);
             break;
         }
+	
+	buffer[counter] = '\0';
     wind_v1 = atoi(buffer);
     wind_r1 = line + 4;
 	printf("\tFound v1:%d\n", wind_v1);
