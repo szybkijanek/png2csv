@@ -11,7 +11,6 @@ Sama instalacja to proste:
 
 
 #PNGtoCSV
-
 Broń boże nie będzie to **OCR**. Analizowane pliki **PNG** zostały wcześniej wygenerowane na serwerze **ICM**u, prawdopodobnie przy użyciu **gnuplota** albo czegoś podobnego i w **nieskompresowanej** formie udostępnione do pobrania. Nie przybliżamy więc odczytu na bazie materiału optycznego, tylko dysponujemy **niezakłamanym** ciągiem bitów z **zakodowanymi** danymi, dostępnymi w nim z dokładnością wynikającą ze skali wykresów i rozdzielczości pliku **PNG**.
 
 Dlaczego **ICM** ułatwiło nam sprawę? To proste. Optymalizacja czasu. Pojedynczy meteorogram generuje się kilka sekund. To naprawdę długo. Dodanie antyaliasingu do znaków i kompresja pliku wynikowego byłyby dodatkowym, uciążliwym dla serwera narzutem. Uruchomili poza tym cache i nie generują codziennie diagramów dla wszystkich możliwych punktów, ograniczając się do generowania ich na bieżąco na żądanie użytkownika.
