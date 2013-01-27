@@ -296,6 +296,7 @@ void analizer::set_scales(){
             if (line != x && line != -1) break;
             buffer[counter++] = chars[i];
             line = x;
+			printf("\tGOOD [%c]!\n", chars[i]);
             break;
         }
     wind_v1 = atoi(buffer);
